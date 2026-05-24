@@ -103,7 +103,6 @@ const ProfilePage = () => {
           <div className="absolute -left-10 -bottom-10 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="flex flex-col md:flex-row items-center gap-6 relative z-10 text-center md:text-left">
-            {/* User Avatar with Hover Edit Overlay */}
             <div className="relative group">
               <div className="w-32 h-32 rounded-2xl overflow-hidden ring-4 ring-indigo-500/30 shadow-xl transition-transform duration-300 group-hover:scale-[1.02]">
                 <img
@@ -151,9 +150,7 @@ const ProfilePage = () => {
           </div>
         </div>
 
-        {/* Content Layout Split Dashboard Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
-          {/* Left Panel: Employee Information Fields */}
           <div className="space-y-6 lg:col-span-1">
             <div className="bg-white dark:bg-slate-900 rounded-2xl p-6 border border-slate-100 dark:border-slate-800 shadow-sm transition-all">
               <h2 className="text-lg font-bold text-slate-900 dark:text-white mb-5 flex items-center gap-2">
@@ -162,7 +159,6 @@ const ProfilePage = () => {
               </h2>
 
               <div className="space-y-4">
-                {/* Field Block */}
                 <div>
                   <label className="text-xs font-bold uppercase text-slate-400 dark:text-slate-500 tracking-wider">
                     Full Name
@@ -172,7 +168,6 @@ const ProfilePage = () => {
                   </div>
                 </div>
 
-                {/* Field Block */}
                 <div>
                   <label className="text-xs font-bold uppercase text-slate-400 dark:text-slate-500 tracking-wider">
                     Email Workspace
@@ -183,7 +178,6 @@ const ProfilePage = () => {
                   </div>
                 </div>
 
-                {/* Field Block */}
                 <div>
                   <label className="text-xs font-bold uppercase text-slate-400 dark:text-slate-500 tracking-wider">
                     Assigned Department
@@ -194,7 +188,6 @@ const ProfilePage = () => {
                   </div>
                 </div>
 
-                {/* Field Block */}
                 <div>
                   <label className="text-xs font-bold uppercase text-slate-400 dark:text-slate-500 tracking-wider">
                     Contact Number
@@ -207,7 +200,6 @@ const ProfilePage = () => {
               </div>
             </div>
 
-            {/* Performance Metric Score Card */}
             <div className="bg-white dark:bg-slate-900 rounded-2xl p-6 border border-slate-100 dark:border-slate-800 shadow-sm transition-all">
               <h2 className="text-lg font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
                 <Award size={18} className="text-indigo-500" />
@@ -248,7 +240,6 @@ const ProfilePage = () => {
             </div>
           </div>
 
-          {/* Right Panel: Change Password Control Settings */}
           <div className="lg:col-span-2">
             <div className="bg-white dark:bg-slate-900 rounded-2xl p-6 md:p-8 border border-slate-100 dark:border-slate-800 shadow-sm transition-all">
               <div className="mb-6">
@@ -293,7 +284,6 @@ const ProfilePage = () => {
                   />
                 </div>
 
-                {/* Action Submit Control Button */}
                 <div className="pt-2 border-t border-slate-100 dark:border-slate-800/50 mt-6 flex justify-end">
                   <button
                     type="submit"

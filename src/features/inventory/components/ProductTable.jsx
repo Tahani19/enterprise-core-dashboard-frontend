@@ -30,7 +30,6 @@ const ProductTable = ({ products }) => {
     setIsEditOpen(true);
   };
 
-  // دالة ذكية لتنسيق حالة المخزون (Stock Level)
   const getStockStyles = (stock) => {
     if (stock === 0) {
       return "bg-rose-50 text-rose-700 dark:bg-rose-950/30 dark:text-rose-400 border border-rose-200/50 dark:border-rose-900/50";
@@ -70,24 +69,20 @@ const ProductTable = ({ products }) => {
               </tr>
             </thead>
 
-            {/* Table Body */}
             <tbody className="divide-y divide-slate-100 dark:divide-slate-800 bg-white dark:bg-slate-900">
               {products?.map((item) => (
                 <tr
                   key={item._id}
                   className="hover:bg-slate-50/80 dark:hover:bg-slate-800/30 transition-colors duration-200"
                 >
-                  {/* Product Title */}
                   <td className="p-4 pl-6 font-semibold text-slate-900 dark:text-slate-100 max-w-xs truncate text-sm">
                     {item.name}
                   </td>
 
-                  {/* Category */}
                   <td className="p-4 text-sm text-slate-500 dark:text-slate-400">
                     {item.category || "General"}
                   </td>
 
-                  {/* Stock Level */}
                   <td className="p-4 text-sm">
                     <span
                       className={`inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium ${getStockStyles(item.stock)}`}
@@ -98,7 +93,6 @@ const ProductTable = ({ products }) => {
                     </span>
                   </td>
 
-                  {/* Price */}
                   <td className="p-4 text-sm font-bold text-indigo-600 dark:text-indigo-400">
                     $
                     {item.price?.toLocaleString(undefined, {
@@ -106,7 +100,6 @@ const ProductTable = ({ products }) => {
                     })}
                   </td>
 
-                  {/* Status Badge */}
                   <td className="p-4">
                     <span className="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-semibold tracking-wide bg-emerald-50 text-emerald-700 dark:bg-emerald-950/30 dark:text-emerald-400 border border-emerald-200/50 dark:border-emerald-900/50">
                       <span className="w-1.5 h-1.5 rounded-full mr-1.5 bg-emerald-500" />
@@ -114,10 +107,8 @@ const ProductTable = ({ products }) => {
                     </span>
                   </td>
 
-                  {/* Control Actions Buttons */}
                   <td className="p-4 pr-6 text-right">
                     <div className="inline-flex items-center gap-2">
-                      {/* Edit button */}
                       <button
                         onClick={() => handleEditClick(item)}
                         type="button"
@@ -127,7 +118,6 @@ const ProductTable = ({ products }) => {
                         <Pencil size={15} />
                       </button>
 
-                      {/* Delete button */}
                       <button
                         onClick={() => handleDelete(item._id)}
                         type="button"
@@ -141,7 +131,6 @@ const ProductTable = ({ products }) => {
                 </tr>
               ))}
 
-              {/* Empty State */}
               {(!products || products.length === 0) && (
                 <tr>
                   <td

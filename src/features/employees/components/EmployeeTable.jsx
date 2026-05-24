@@ -19,7 +19,6 @@ const EmployeeTable = ({ employees, user }) => {
 
     try {
       await deleteEmployee(id);
-      // التحديث الاحترافي من خلال الـ State الخاص بالـ Redux بدلاً من إعادة تحميل الصفحة كاملة
       dispatch(deleteEmployeeState(id));
       toast.success("Employee deleted successfully");
     } catch (error) {
@@ -33,7 +32,6 @@ const EmployeeTable = ({ employees, user }) => {
     setIsEditOpen(true);
   };
 
-  // دالة ذكية لتنسيق شارات الأدوار الوظيفية داخل الشركة
   const getRoleStyles = (role) => {
     const normalizeRole = role?.toLowerCase() || "user";
     if (normalizeRole === "admin") {
@@ -88,7 +86,6 @@ const EmployeeTable = ({ employees, user }) => {
                   key={employee._id}
                   className="hover:bg-slate-50/80 dark:hover:bg-slate-800/30 transition-colors duration-200"
                 >
-                  {/* User Profile Cell */}
                   <td className="p-4 pl-6">
                     <div className="flex items-center gap-3.5">
                       <img
@@ -107,12 +104,10 @@ const EmployeeTable = ({ employees, user }) => {
                     </div>
                   </td>
 
-                  {/* Department */}
                   <td className="p-4 text-sm text-slate-600 dark:text-slate-400 font-medium">
                     {employee.department || "N/A"}
                   </td>
 
-                  {/* Role Badge */}
                   <td className="p-4">
                     <span
                       className={`inline-flex items-center px-2.5 py-0.5 rounded-lg text-xs font-semibold ${getRoleStyles(employee.role)}`}
@@ -121,7 +116,6 @@ const EmployeeTable = ({ employees, user }) => {
                     </span>
                   </td>
 
-                  {/* Salary */}
                   <td className="p-4 text-sm font-bold text-slate-900 dark:text-slate-200">
                     $
                     {employee.salary?.toLocaleString(undefined, {
@@ -129,10 +123,8 @@ const EmployeeTable = ({ employees, user }) => {
                     })}
                   </td>
 
-                  {/* Action Buttons Icons Box */}
                   <td className="p-4 pr-6 text-right">
                     <div className="inline-flex items-center gap-2">
-                      {/* Edit Button */}
                       <button
                         onClick={() => handleEditClick(employee)}
                         type="button"
@@ -158,7 +150,6 @@ const EmployeeTable = ({ employees, user }) => {
                 </tr>
               ))}
 
-              {/* Empty Data Row */}
               {(!employees || employees.length === 0) && (
                 <tr>
                   <td

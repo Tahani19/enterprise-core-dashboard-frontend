@@ -38,7 +38,6 @@ const Dashboard = () => {
     fetchStats();
   }, [dispatch]);
 
-  // شاشة تحميل رسمية هادئة (Minimalist Loader)
   if (!stats) {
     return (
       <DashboardLayout>
@@ -52,7 +51,6 @@ const Dashboard = () => {
     );
   }
 
-  // تنسيق التاريخ الحالي بشكل رسمي
   const formattedDate = new Date().toLocaleDateString("en-US", {
     weekday: "short",
     year: "numeric",
@@ -63,7 +61,6 @@ const Dashboard = () => {
   return (
     <DashboardLayout>
       <div className="max-w-[1600px] mx-auto space-y-8 text-slate-800 dark:text-slate-100">
-        {/* Top Header - Corporate / Clean Style */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pb-6 border-b border-slate-200 dark:border-slate-800/80">
           <div>
             <h1 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-black">
@@ -82,7 +79,6 @@ const Dashboard = () => {
           </div>
         </div>
 
-        {/* Core Stats Grid - Clean Executive Blocks */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <StatsCard
             title="Total Revenue"
@@ -127,7 +123,6 @@ const Dashboard = () => {
           />
         </div>
 
-        {/* Operational Metrics Sub-Section */}
         <div className="bg-slate-50 dark:bg-[#131b2e] border border-slate-200/80 dark:border-slate-800/70 rounded-2xl p-6 shadow-sm">
           <div className="flex items-center justify-between mb-6">
             <div>
@@ -166,14 +161,11 @@ const Dashboard = () => {
           </div>
         </div>
 
-        {/* Lower Core Split Grid: Analytics Chart & Activity Feed */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
-          {/* Main Analytics Graph Area */}
           <div className="lg:col-span-2 bg-white dark:bg-[#111827] border border-slate-200/60 dark:border-slate-800/80 rounded-2xl p-4 shadow-sm">
             <AnalyticsChart />
           </div>
 
-          {/* System Activity Log Feed */}
           <div className="lg:col-span-1 bg-white dark:bg-[#111827] border border-slate-200/60 dark:border-slate-800/80 rounded-2xl p-4 shadow-sm">
             <ActivityFeed />
           </div>

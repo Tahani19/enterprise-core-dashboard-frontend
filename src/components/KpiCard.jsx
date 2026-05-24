@@ -11,12 +11,10 @@ const KpiCard = ({ title, value }) => {
         duration-300
       "
     >
-      {/* عنوان الكرت - يتحول من الرمادي الداكن للرمادي الفاتح بالدارك مود */}
       <h3 className="text-sm font-semibold text-slate-500 dark:text-slate-400 mb-2">
         {title}
       </h3>
 
-      {/* القيمة الرقمية - تتحول تلقائياً للأبيض الناصع في الدارك مود */}
       <h1 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
         {value}
       </h1>

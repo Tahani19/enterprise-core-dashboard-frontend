@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { Moon, Sun, LogOut, Search, Command, Menu } from "lucide-react";
 import { logout } from "../features/auth/authSlice";
 
-// استقبال isOpen و setIsOpen للتحكم بالسايدبار من الجوال
 const Navbar = ({ isOpen, setIsOpen }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -65,9 +64,7 @@ const Navbar = ({ isOpen, setIsOpen }) => {
 
   return (
     <header className="h-[76px] flex items-center justify-between px-4 sm:px-6 md:px-8 w-full bg-white dark:bg-[#111827] border-b border-slate-200/60 dark:border-slate-800/60 transition-colors duration-300 sticky top-0 z-40">
-      {/* القسم الأيسر: زر الهامبرغر للجوال + الشعار */}
       <div className="flex items-center gap-3">
-        {/* زر فتح القائمة الجانبية يظهر فقط في شاشات الموبايل والتابلت md:hidden */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           type="button"
@@ -85,7 +82,6 @@ const Navbar = ({ isOpen, setIsOpen }) => {
         </div>
       </div>
 
-      {/* القسم الأوسط: شريط البحث الذكي (يختفي في الشاشات الصغيرة ويظهر من md وما فوق) */}
       <div className="relative hidden md:block">
         <span className="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none text-slate-400 dark:text-slate-500">
           <Search size={16} />
@@ -103,9 +99,7 @@ const Navbar = ({ isOpen, setIsOpen }) => {
         </span>
       </div>
 
-      {/* القسم الأيمن: أزرار التبديل والبروفايل (تتقلص وتتكيف بمرونة بفضل الفليكس والـ gap) */}
       <div className="flex items-center gap-2 sm:gap-3.5 border-l border-slate-200 dark:border-slate-800 pl-3 sm:pl-6">
-        {/* زر الوضع المظلم */}
         <button
           onClick={toggleDarkMode}
           type="button"
@@ -115,7 +109,6 @@ const Navbar = ({ isOpen, setIsOpen }) => {
           {isDark ? <Sun size={18} /> : <Moon size={18} />}
         </button>
 
-        {/* زر تسجيل الخروج */}
         <button
           onClick={logoutHandler}
           type="button"
@@ -125,7 +118,6 @@ const Navbar = ({ isOpen, setIsOpen }) => {
           <LogOut size={18} />
         </button>
 
-        {/* صورة البروفايل */}
         <div className="relative ml-0.5 flex-shrink-0">
           <img
             onClick={() => navigate("/profile")}

@@ -12,7 +12,6 @@ import {
 import { Link, useLocation } from "react-router-dom";
 
 const Sidebar = ({ isOpen, setIsOpen }) => {
-  // استخدام useLocation لمعرفة الرابط الحالي وتمييز الزر النشط تلقائياً بلمسة جمالية
   const location = useLocation();
 
   const menuItems = [
@@ -31,7 +30,6 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
 
   return (
     <>
-      {/* الستارة الخلفية الشفافة عند فتح القائمة في الجوال لإغلاقها عند الضغط خارجها */}
       {isOpen && (
         <div
           className="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-40 md:hidden transition-opacity duration-300"
@@ -50,7 +48,6 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
         `}
       >
         <div className="w-full">
-          {/* الهيدر الخاص بالشعار وزر الإغلاق في الجوال */}
           <div className="flex items-center justify-between mb-10 pb-2 border-b border-slate-200/40 dark:border-slate-800/40">
             <div className="flex items-center gap-2.5">
               <div className="w-9 h-9 rounded-2xl bg-indigo-600 flex items-center justify-center text-white font-black text-sm shadow-md shadow-indigo-500/20">
@@ -61,7 +58,6 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
               </span>
             </div>
 
-            {/* زر إغلاق ذكي يظهر فقط على الهواتف والأجهزة اللوحية */}
             <button
               onClick={() => setIsOpen(false)}
               className="md:hidden p-1.5 rounded-xl hover:bg-slate-200/60 dark:hover:bg-slate-800 text-slate-500 dark:text-slate-400"
@@ -70,7 +66,6 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
             </button>
           </div>
 
-          {/* روابط التنقل والملاحة المحدثة كلياً بالانحناءات الدائرية الفخمة */}
           <nav className="flex flex-col gap-2">
             {menuItems.map((item) => {
               const isActive = location.pathname === item.path;
@@ -78,7 +73,7 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
                 <Link
                   key={item.path}
                   to={item.path}
-                  onClick={() => setIsOpen(false)} // إغلاق القائمة تلقائياً بالجوال عند الضغط على الرابط
+                  onClick={() => setIsOpen(false)}
                   className={`
                     flex items-center justify-between p-3 rounded-2xl
                     text-sm font-semibold transition-all duration-200 group
@@ -98,7 +93,6 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
                     <span>{item.label}</span>
                   </div>
 
-                  {/* سهم مؤشر ناعم يظهر عند تحويم الفأرة على العناصر غير النشطة */}
                   {!isActive && (
                     <ChevronRight
                       size={14}
@@ -111,7 +105,6 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
           </nav>
         </div>
 
-        {/* تذييل سفلي صغير وراقي يعطي طابع الاحترافية للشركات */}
         <div className="pt-4 border-t border-slate-200/40 dark:border-slate-800/40 text-center">
           <p className="text-[10px] font-bold tracking-widest text-slate-400 dark:text-slate-600 uppercase">
             v2.4.0 • Stable Grid

@@ -18,17 +18,14 @@ const StatsCard = ({ title, value, growth, icon }) => {
     >
       <div className="flex items-center justify-between">
         <div>
-          {/* عنوان الكرت التفاعلي */}
           <p className="text-slate-500 dark:text-slate-400 text-sm font-semibold">
             {title}
           </p>
-          {/* القيمة الرقمية الكبيرة */}
           <h2 className="text-3xl font-bold mt-2.5 text-slate-900 dark:text-white tracking-tight">
             {value}
           </h2>
         </div>
 
-        {/* حاوية الأيقونة الدائرية الناعمة المتكيفة مع الدارك مود */}
         <div
           className="
             w-12
@@ -47,7 +44,6 @@ const StatsCard = ({ title, value, growth, icon }) => {
         </div>
       </div>
 
-      {/* شريط معلومات النمو السفلي */}
       <div className="flex items-center gap-2 mt-5 border-t border-slate-100 dark:border-slate-800/60 pt-3">
         <div className="flex items-center gap-1 bg-emerald-50 dark:bg-emerald-950/30 px-2 py-0.5 rounded-lg border border-emerald-100 dark:border-emerald-900/20">
           <TrendingUp

@@ -6,7 +6,6 @@ import {
   Clock,
 } from "lucide-react";
 
-// تحويل مصفوفة البيانات إلى كائنات ذكية تحتوي على أيقونات وأوقات وتصنيفات مخصصة
 const activities = [
   {
     id: 1,
@@ -58,7 +57,6 @@ const ActivityFeed = () => {
         duration-300
       "
     >
-      {/* هيدر صندوق الأحداث */}
       <div className="mb-6">
         <h2 className="text-lg font-bold text-slate-900 dark:text-white tracking-tight">
           Recent Activity
@@ -68,9 +66,7 @@ const ActivityFeed = () => {
         </p>
       </div>
 
-      {/* الـ Timeline السحابي المطور */}
       <div className="relative pl-1">
-        {/* الخط الزمني الرمادي الخفي الممتد خلف الأيقونات */}
         <div className="absolute left-[19px] top-3 bottom-3 w-[2px] bg-slate-100 dark:bg-slate-800/60 pointer-events-none" />
 
         <div className="space-y-6">
@@ -79,7 +75,6 @@ const ActivityFeed = () => {
               key={activity.id}
               className="relative flex items-start gap-4 group"
             >
-              {/* حاوية الأيقونة التفاعلية المستديرة */}
               <div
                 className={`
                   relative z-10
@@ -96,7 +91,6 @@ const ActivityFeed = () => {
                 {activity.icon}
               </div>
 
-              {/* نصوص وتفاصيل الحدث الحالي */}
               <div className="flex-1 min-w-0 pt-0.5 pb-2 border-b border-slate-100 dark:border-slate-800/40 group-last:border-0">
                 <div className="flex justify-between items-start gap-2">
                   <p className="text-sm font-medium text-slate-700 dark:text-slate-300 transition-colors group-hover:text-slate-900 dark:group-hover:text-white line-clamp-2">
@@ -104,7 +98,6 @@ const ActivityFeed = () => {
                   </p>
                 </div>
 
-                {/* عداد وقت افتراضي مصغر وبشكل أنيق جداً */}
                 <div className="flex items-center gap-1 text-slate-400 dark:text-slate-500 text-[11px] font-medium mt-1">
                   <Clock size={11} />
                   <span>{activity.time}</span>

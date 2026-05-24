@@ -1,21 +1,5 @@
 import API from "../../services/api";
 
-// Get Products
-/*export const getProducts =
-async (
-  page = 1,
-  search = ""
-) => {
-
-  const { data } =
-    await API.get(
-
-      `/products?page=${page}&limit=10&search=${search}`
-
-    );
-
-  return data;
-};*/
 export const getProducts = async (page, limit, search) => {
   const { data } = await API.get(
     `/products?page=${page}&limit=${limit}&search=${search}`,

@@ -36,7 +36,6 @@ const pieData = [
   { name: "Employees", value: 25 },
 ];
 
-// لوحة ألوان عصرية وحيوية تتوافق مع الـ Light والـ Dark Mode
 const COLORS = ["#6366f1", "#10b981", "#f59e0b"];
 
 const ReportsPage = () => {
@@ -145,7 +144,6 @@ const ReportsPage = () => {
 
         {/* Charts Section */}
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
-          {/* Sales Analytics Bar Chart */}
           <div className="xl:col-span-2 bg-white dark:bg-slate-900 rounded-2xl shadow-sm p-6 border border-slate-100 dark:border-slate-800 transition-all">
             <div className="flex justify-between items-center mb-6">
               <div>
@@ -244,7 +242,6 @@ const ReportsPage = () => {
                 </PieChart>
               </ResponsiveContainer>
 
-              {/* النص المتمركز بداخل الـ Donut Chart ليعطي طابعاً احترافياً */}
               <div className="absolute flex flex-col items-center justify-center">
                 <span className="text-2xl font-extrabold text-slate-900 dark:text-white">
                   100%
@@ -255,7 +252,6 @@ const ReportsPage = () => {
               </div>
             </div>
 
-            {/* مفاتيح الخريطة (Legends) بتنسيق رائع */}
             <div className="space-y-2.5 mt-4 pt-4 border-t border-slate-50 dark:border-slate-800/60">
               {pieData.map((item, index) => (
                 <div

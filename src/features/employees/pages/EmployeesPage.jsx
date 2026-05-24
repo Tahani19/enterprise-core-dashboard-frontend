@@ -25,7 +25,6 @@ const EmployeesPage = () => {
   const [departmentFilter, setDepartmentFilter] = useState("All");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // تصفية الموظفين بناءً على البحث والمنشأة / القسم
   const filteredEmployees = employees.filter((employee) => {
     const matchesSearch = employee.name
       ?.toLowerCase()
@@ -39,7 +38,6 @@ const EmployeesPage = () => {
     return matchesSearch && matchesDepartment;
   });
 
-  // حسابات الـ Pagination الداخلية
   const indexOfLastEmployee = currentPage * employeesPerPage;
   const indexOfFirstEmployee = indexOfLastEmployee - employeesPerPage;
   const currentEmployees = filteredEmployees.slice(
@@ -61,7 +59,6 @@ const EmployeesPage = () => {
     fetchEmployees();
   }, [dispatch]);
 
-  // لإعادة تعيين الصفحة إلى 1 عند تغيير الفلاتر أو البحث
   useEffect(() => {
     setCurrentPage(1);
   }, [search, departmentFilter]);
@@ -105,7 +102,6 @@ const EmployeesPage = () => {
             />
           </div>
 
-          {/* Department Filter Select Dropdown */}
           <div className="relative w-full sm:w-56">
             <select
               value={departmentFilter}
@@ -126,10 +122,8 @@ const EmployeesPage = () => {
           </div>
         </div>
 
-        {/* Redux-Connected Employee Data Table Component */}
         <EmployeeTable employees={currentEmployees} user={user} />
 
-        {/* Premium Pagination Controls Wrapper */}
         {totalPages > 1 && (
           <div className="flex items-center justify-center gap-2 mt-8">
             <button
@@ -156,7 +150,6 @@ const EmployeesPage = () => {
           </div>
         )}
 
-        {/* Creation Dialog Modal Component */}
         <AddEmployeeModal
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}

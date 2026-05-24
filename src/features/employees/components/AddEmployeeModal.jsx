@@ -17,7 +17,6 @@ const AddEmployeeModal = ({ isOpen, onClose }) => {
       const newEmployee = await createEmployee(data);
       dispatch(addEmployee(newEmployee));
 
-      // تصحيح رسالة النجاح هنا لتصبح مناسبة لعملية الإضافة
       toast.success("Employee created successfully!");
       reset();
       onClose();
@@ -40,9 +39,7 @@ const AddEmployeeModal = ({ isOpen, onClose }) => {
 
   return (
     <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center z-50 p-4 transition-all duration-300">
-      {/* حاوية الـ Modal المتكيفة مع الدارك مود والمنحنيات الناعمة */}
       <div className="bg-white dark:bg-[#161f32] w-full max-w-[500px] rounded-3xl p-6 md:p-8 relative border border-slate-200/60 dark:border-slate-800/80 shadow-2xl transition-colors duration-300">
-        {/* زر الإغلاق الدائري الأنيق */}
         <button
           onClick={onClose}
           disabled={isSubmitting}
@@ -51,7 +48,6 @@ const AddEmployeeModal = ({ isOpen, onClose }) => {
           <X size={18} />
         </button>
 
-        {/* عنوان الـ Modal */}
         <div className="mb-6">
           <h2 className="text-xl font-bold text-slate-900 dark:text-white tracking-tight">
             Add Employee
@@ -61,7 +57,6 @@ const AddEmployeeModal = ({ isOpen, onClose }) => {
           </p>
         </div>
 
-        {/* حقول الإدخال */}
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           <div>
             <input
@@ -111,7 +106,6 @@ const AddEmployeeModal = ({ isOpen, onClose }) => {
             />
           </div>
 
-          {/* زر الإنشاء مع مؤشر التحميل والتأثيرات التفاعلية */}
           <button
             type="submit"
             disabled={isSubmitting}

@@ -20,7 +20,6 @@ const OrdersTable = ({ orders }) => {
     }
   };
 
-  // دالة ذكية لتنسيق ألوان الحالة (Status) بشكل احترافي
   const getStatusStyles = (status) => {
     const normalizeStatus = status?.toLowerCase() || "completed";
 
@@ -29,7 +28,7 @@ const OrdersTable = ({ orders }) => {
         return "bg-amber-50 text-amber-700 dark:bg-amber-950/30 dark:text-amber-400 border border-amber-200/50 dark:border-amber-900/50";
       case "cancelled":
         return "bg-rose-50 text-rose-700 dark:bg-rose-950/30 dark:text-rose-400 border border-rose-200/50 dark:border-rose-900/50";
-      default: // Completed
+      default:
         return "bg-emerald-50 text-emerald-700 dark:bg-emerald-950/30 dark:text-emerald-400 border border-emerald-200/50 dark:border-emerald-900/50";
     }
   };
@@ -120,7 +119,6 @@ const OrdersTable = ({ orders }) => {
               </tr>
             ))}
 
-            {/* في حال كانت قائمة الطلبات فارغة */}
             {(!orders || orders.length === 0) && (
               <tr>
                 <td
