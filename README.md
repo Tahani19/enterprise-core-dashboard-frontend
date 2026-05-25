@@ -14,7 +14,9 @@
 
 <img width="1888" height="857" alt="settings" src="https://github.com/user-attachments/assets/1e2185b9-f3bb-4cff-9aa6-246d0979cc0c" />
 
-
+## Try The System
+Site URL : 
+https://6a14a4d9dd37fe00086ce7fc--enterprise-core-dashboard.netlify.app/
 
 ## Project Description
 
